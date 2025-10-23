@@ -2,17 +2,38 @@
 # Hi there 👋
 I work in ML and Data Science. Here are some of my projects:
 
-- [Fraud Detection](https://github.com/AleksandrRodkin/FraudDetection) — detecting  of fraudulent applications with bank accounts
-  - Got a realistic Bank Account Fraud Dataset from kaggle;
-  - Performed EDA (the target class is imbalanced), Feature Engineering and data preprocessing;
-  - Used Recall@5% FPR as the main metric (to balance the model’s accuracy and user experience);
-  - Tuned baseline models (LR and SVC), Random Forest and XGB with TimeSeries CV.
-  - Applied a paired statistical test on bootstrap subsamples to compare mean metric values for model selection;
-  - Calibrated the probabilities of the XGB model with Platt’s method and changed the predict method to limit FPR at 5% level;
-  - Developed an API with FastAPI and containerized it using Docker.
+- [Bank Account Fraud Detection API](https://github.com/AleksandrRodkin/FraudDetection)
+
+  *Built an end-to-end ML system for fraud detection using realistic data, combining advanced ML with production-ready API deployment*
+
+  - Exploratory Data Analysis & Feature Engineering:
+    - Conducted detailed EDA and identified that fraud cases account for approximately 1% of all records;
+    - Removed irrelevant features, merged rare categories to improve data stability;
+    - Selected informative features using correlation analysis, mutual information, and model-based importance scores to improve generalization.
+
+  - Modeling:
+    - Used Recall@5% FPR as the main metric to optimize fraud detection while maintaining low false positives, balancing business impact and user experience;
+    - Built a reproducible end-to-end ML pipeline for data preprocessing, feature engineering, and model training;
+    - Trained and compared multiple models: Logistic Regression, LinearSVC, Random Forest, and XGBoost;
+    - Applied time series cross-validation to prevent data leakage and ensure realistic performance estimation;
+    - Used SMOTE and NearMiss to handle imbalanced training data and boost model sensitivity;
+    - Tuned hyperparameters with Optuna;
+    - Conducted paired statistical tests for model selection;
+    - Calibrated XGBoost probabilities with Platt scaling and optimized the classification threshold to ensure the FPR does not exceed 5%;
+    - Achieved competitive results on the test set with Recall@5% FPR = 0.55, while avoiding data leakage.
+
+  - API Development & Deployment:
+    - Built a high-performance asynchronous API with FastAPI to serve model predictions in real time;
+    - Implemented two data access modes: via JSON input (with Pydantic validation) or via PostgreSQL data base connection, managed through SQLAlchemy;
+    - Supported batch processing - multiple applications can be checked at once;
+    - Validated responses using Pydantic schemas to ensure consistent and safe data exchange;
+    - Integrated logging with loguru;
+    - Containerized the service with Docker for reproducible deployment and easy scaling across environments.
 
 - [A/B Test Analysis with Ratio Metrics](https://github.com/AleksandrRodkin/Statistics_and_AB_tests)
-  - This project explores reliable methods for analyzing ratio metrics (mean session duration) in A/B tests, where standard mean comparisons often produce biased results;
+
+  *This project explores reliable methods for analyzing ratio metrics (mean session duration) in A/B tests, where standard mean comparisons often produce biased results*
+  
   - Demonstrates, using synthetic user-level data, how session-level analysis can inflate false positive rates;
   - Compares several statistical approaches for ratio metrics: Bootstrap, Bucket Method, Linearization, and Linearization with CUPED;
   - Bootstrap provides a distribution-free estimate but is computationally expensive;
