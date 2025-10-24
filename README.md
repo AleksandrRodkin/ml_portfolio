@@ -30,7 +30,7 @@ I work in ML and Data Science. Here are some of my projects:
    - Integrated logging with loguru;
    - Containerized the service with Docker for reproducible deployment and easy scaling across environments.
 
-## [A/B Test Analysis with Ratio Metrics](https://github.com/AleksandrRodkin/Statistics_and_AB_tests)
+## [Analysis of Ratio Metrics in A/B Tests](https://github.com/AleksandrRodkin/Statistics_and_AB_tests)
 
  *This project explored reliable methods for analyzing ratio metrics (on the example of mean session duration) in A/B tests, where standard mean comparisons often produced biased results*
  
