@@ -30,6 +30,15 @@ I work in ML and Data Science. Here are some of my projects:
    - Integrated logging with loguru;
    - Containerized the service with Docker for reproducible deployment and easy scaling across environments.
 
+## [Data Pipeline for Loading Data into a DataLakehouse](https://github.com/AleksandrRodkin/DataPipeline)
+  *Developed a full-fledged Data Pipeline based on DataLakehouse architecture, moving data from PostgreSQL to S3-compatible storage (MinIO) using Apache Spark and Iceberg*
+  
+- Implemented Apache Spark jobs: reading via JDBC, filtering by time windows and writing tables with partitioning;
+- Orchestrated the entire process in Apache Airflow: data generation, execution of Spark jobs and updating of dbt models;
+- Built analytical Data Marts using dbt: realized staging-, fact-, dimension-models with modular transformation logic;
+- Containerized all components (Airflow, Spark, Trino, MinIO, dbt, etc.) and ensured seamless deployment with Docker and `docker compose`;
+- Implemented infrastructure that can be fully launched with a single command, supporting the complete ELT cycle - from loading data into the lakehouse to building analytical Data Marts.
+  
 ## [Analysis of Ratio Metrics in A/B Tests](https://github.com/AleksandrRodkin/Statistics_and_AB_tests)
 
  *This project explored reliable methods for analyzing ratio metrics (on the example of mean session duration) in A/B tests, where standard mean comparisons often produced biased results*
