@@ -51,6 +51,16 @@ I work in ML and Data Science. Here are some of my projects:
  - Used CUPED (Controlled Experiment Using Pre-Experiment Data) to leverage historical data for further variance reduction and improved sensitivity;
  - Found that CUPED reduced p-values by 2–3× compared to baseline methods, confirming a significant improvement in test precision.
 
+## [Detection of Steel Rebar Defects in 3D Concrete Scans](https://github.com/AleksandrRodkin/RebarDefects)
+
+*Developed an interpretable statistical model to find rebar breaks and metal loss in noisy 3D concrete scans without labeled data*
+
+- Turned a complex 3D voxel classification problem into a 1D analysis along the rebar path, enabling defect detection without supervised learning;
+- Sampled cross-sections along the rebar and compared signal statistics inside the steel vs surrounding concrete to separate material from noise;
+- Built signal-to-noise based features that account for spatially changing scan noise;
+- Flagged defects as local drops in signal strength and assigned confidence scores using probabilistic scoring functions;
+- Packaged the solution as a configurable sklearn-like Python class with defect filtering, merging logic, and parameter stability checks.
+
 ## [Segmentation_MVTec_AD](https://github.com/AleksandrRodkin/Segmentation_MVTec_AD)
  *In this project, a model was developed for defect segmentation on the MVTec_AD dataset*
  - Task: Detect and segment defects on metal nuts at the pixel level using data from MVTec AD;
